@@ -3,10 +3,15 @@
   
 | 1 | 7 | 4 | 5 | 5 | 3 |
 | ---- | ---- | ---- | ---- | ---- | ---- |
-| 1 | 7 | 4 | 5 | 5 | https://placehold.it/150/ffffff/ff0000?text=3 |
+| 1 | 7 | 4 | 5 | 5 | ![#f03c15](https://via.placeholder.com/15/f03c15/fff?text=3+) |
 
-  <span style="color:red">span</span>
-  <font color=red>3</font>
+```diff
+- text in red
++ text in green
+! text in orange
+# text in gray
+@@ text in purple (and bold)@@
+```
 
 ### 选择排序
 
