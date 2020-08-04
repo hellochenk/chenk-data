@@ -5,7 +5,8 @@
 | ---- | ---- | ---- | ---- | ---- | ---- |
 | 1 | 7 | 4 | 5 | 5 | <span style="color:red">3</span> |
 
-  <span style="color:red">3</span>
+  <span style="color:red">span</span>
+  <font color=red>3</font>
 
 ### 选择排序
 
