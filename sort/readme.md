@@ -3,9 +3,9 @@
   
 | 1 | 7 | 4 | 5 | 5 | 3 |
 | ---- | ---- | ---- | ---- | ---- | ---- |
-| 1 | 7 | 4 | 5 | 5 | <span style="color:red;">3</span> |
+| 1 | 7 | 4 | 5 | 5 | <span style="color:red">3</span> |
 
-  
+  <span style="color:red">3</span>
 
 ### 选择排序
 
