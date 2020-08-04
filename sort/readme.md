@@ -4,6 +4,12 @@
 ```diff
   | 1 | 7 | 4 | 5 | 5 | -3- |
   
+  - text in red
+  + text in green
+  ! text in orange
+  # text in gray
+  @@ text in purple (and bold)@@
+  
 ```
 | 1 | 7 | 4 | 5 | 5 | 3 |
 
