@@ -3,7 +3,7 @@
   
 | 1 | 7 | 4 | 5 | 5 | 3 |
 | ---- | ---- | ---- | ---- | ---- | ---- |
-| 1 | 7 | 4 | 5 | 5 | ![#f03c15]3 |
+| 1 | 7 | 4 | 5 | 5 | https://placehold.it/150/ffffff/ff0000?text=3 |
 
   <span style="color:red">span</span>
   <font color=red>3</font>
