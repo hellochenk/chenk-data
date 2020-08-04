@@ -4,6 +4,7 @@
 | 1 | 7 | 4 | 5 | 5 | 3 |
 | ---- | ---- | ---- | ---- | ---- | ---- |
 | 1 | 7 | 4 | 5 | 5 | ![#f03c15](https://via.placeholder.com/15/f03c15/fff?text=3+) |
+| 1 | 7 | 4 | 5 | 5 | ```diff 3 in red  ``` |
 
 ```diff
 - text in red
