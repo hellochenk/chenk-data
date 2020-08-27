@@ -1,66 +1,132 @@
-// 链表
-
-function Node(element) {
-    this.element = element; // 保存节点的信息
-    this.next = null
+// 链表节点
+class Node {
+    constructor(element) {
+        this.element = element; // 保存节点的信息
+        this.next = null
+    }
 }
 
-function LList() {
-    this.header = new Node('header');
-
-    this.find = find; // 查找特点节点
-    this.findPrevious = findPrevious;
-    this.insert = insert;
-    this.remove = remove;
-    this.display = display;
+// 单链表
+class SingleList {
+    constructor() {
+        this.header = new Node('header')
+    }
     
-} 
-
-function find(item) {
-    var currentNode = this.header;
-    while (currentNode.element !== item) {
-        currentNode = currentNode.next;
+    find(item) {
+        var currentNode = this.header;
+        while (currentNode.element !== item) {
+            currentNode = currentNode.next;
+        }
+        return currentNode;
     }
-    return currentNode;
+
+    insert(newElement, item) {
+        var newNode = new Node(newElement);
+        var currentNode = this.find(item);
+
+        // 交换位置 将老节点的next放到新节点的next,同时将新节点设置为老节点的next
+        newNode.next = currentNode.next;
+        currentNode.next = newNode;
+    }
+
+    display() {
+        var currentNode = this.header;
+        while(!(currentNode.next == null)) {
+            console.log(currentNode.next.element);
+            currentNode = currentNode.next;
+        };
+    }
+
+    findPrevious(item) {
+        var currentNode = this.header;
+        while(!(currentNode.next == null) && currentNode.next.element !== item) {
+            currentNode = currentNode.next;
+        }
+        return currentNode;
+    }
+
+    remove(item) {
+        var previousNode = this.findPrevious(item);
+        if(!(previousNode == null)) {
+            previousNode.next = previousNode.next.next;
+        }
+    }
 }
 
-function insert(newElement, item) {
-    var newNode = new Node(newElement);
-    var currentNode = this.find(item);
+// 双向链表
+class DoubleNode{
+    constructor(element) {
+        this.element = element; // 保存节点的信息
+        this.next = null;
+        this.previous = null;
+    }
+}
+
+class DoubleList {
+    constructor() {
+        this.header = new DoubleNode('header');
+    }
     
-    // 交换位置 将老节点的next放到新节点的next,同时将新节点设置为老节点的next
-    newNode.next = currentNode.next;
-    currentNode.next = newNode;
-}
-
-function display() {
-    var currentNode = this.header;
-    do {
-        console.log(currentNode.next.element);
-        currentNode = currentNode.next;
-    } while(!(currentNode.next == null))
-//     while(!(currentNode.next == null)) {
-//         console.log(currentNode.next.element, '/n');
-//         currentNode = currentNode.next;
-//     }
-}
-
-function findPrevious(item) {
-    var currentNode = this.header;
-    while(!(currentNode.next == null) && currentNode.next.element !== item) {
-        currentNode = currentNode.next;
+    find(item) {
+        var currentNode = this.header;
+        while (currentNode.element !== item) {
+            currentNode = currentNode.next;
+        }
+        return currentNode;
     }
-    return currentNode;
-}
+    
+    findLast() {
+        let currentNode = this.header;
 
-function remove(item) {
-    var previousNode = this.findPrevious(item);
-    if(!(previousNode == null)) {
-        previousNode.next = previousNode.next.next;
+        while(!(currentNode == null) && !(currentNode.next == null)) {
+            currentNode = currentNode.next;
+        }
+        return currentNode;
+    }
+    
+    insert(newElement, item) {
+        var newNode = new DoubleNode(newElement);
+        var currentNode = this.find(item);
+
+        newNode.next = currentNode.next;
+        newNode.previous = currentNode;
+        currentNode.next = newNode;
+    }
+    
+    remove(item) {
+    //     var previousNode = this.findPrevious(item);
+        const currentNode = this.find(item);
+        if(!(currentNode.next == null)) {
+    //         previousNode.next = previousNode.next.next;
+            currentNode.previous.next = currentNode.next;
+            currentNode.next.previous = currentNode.previous;
+
+            currentNode.previous = null;
+            currentNode.next = null;
+        }
+    }
+    
+    display() {
+        var currentNode = this.header;
+        while(!(currentNode.next == null)) {
+            console.log(currentNode.next.element);
+            currentNode = currentNode.next
+        }
+    }
+
+    displayReverse() {
+        var currentNode = this.findLast();
+        while(!(currentNode.previous == null)) {
+            console.log(currentNode.element);
+            currentNode = currentNode.previous;
+        }
     }
 }
 
-// todo 双向链表
+
+
+
+
 
 
 
